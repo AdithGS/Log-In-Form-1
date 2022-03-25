@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="col-12 text-center mt-5">
+        <h3 class="text-secondary">Reactive Form </h3>
+    </div>
+</div>
+
+<div class="row">
+    <!-- <div class="col-3"></div> -->
+    <div class="col-6 content">
+        <div class="formStyle ">
+            <form [formGroup]="formComplete" (ngSubmit)="signUp()">
+                <div class="form-group custom-field ">
+                    <div class="row ">
+                        <div class="col-12 ">
+                            <div>
+                                <label for="">First Name</label>
+                                <input type="text" name="firstName" class="form-control" formControlName="firstName"
+                                    placeholder="First name">
+                                <div *ngIf="(f.firstName.invalid && f.firstName.touched) || f.firstName.dirty">
+                                    <small class="text-danger" *ngIf="f.firstName.errors?.required">First name
+                                        required</small>
+                                    <small class="text-danger" *ngIf="f.firstName.errors?.minlength">Minimum 5
+                                        characters
+                                        required</small>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- <div class="col-6 ">
+                            <div>
+                                <label for="">Last Name</label>
+                                <input type="text" name="lastName" class="form-control" formControlName="lastName"
+                                    placeholder="Last name">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="form-group custom-field">
+                    <div>
+                        <label for="">Email</label>
+                        <input type="email" name="email" class="form-control" formControlName="email"
+                            placeholder="Email">
+                        <div *ngIf="(f.email.invalid && f.email.touched) || f.email.dirty">
+                            <small class="text-danger" *ngIf="f.email.errors?.email">
+                                Email not valid.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group custom-field ">
+                    <div class="row">
+                        <div class="col-6">
+                            <div>
+                                <label for=""> Password</label>
+                                <input type="password" name="password" class="form-control" formControlName="password"
+                                    placeholder="Password">
+                                <div *ngIf="(f.password.invalid && f.password.touched) || f.password.dirty">
+                                    <small>required</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-6">
+                            <div>
+                                <label for="">Confirm Password</label>
+                                <input type="confirmPassword" name="confirmPassword" class="form-control"
+                                    formControlName="confirmPassword" placeholder="Confirm Password">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <div class="form-group custom-field">
+                    <div>
+                        <!-- <input type="text" name="lastName" class="form-control" formControlName="lastName"
+                                placeholder="Last name"> -->
+                    </div>
+                </div>
+                <!-- <div class="form-group custom-field">
+                    <div>
+                        <label for="dateOfBirth">Date of Birth</label>
+
+                        <div class="input-group-append">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="model"
+                                ngbDatepicker #d="ngbDatepicker" [minDate]="{year: 1980, month: 1, day: 1}">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i
+                                    class="fa-solid fa-calendar"></i></button>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="form-group ">
+                    <div>
+                        <button type="button" class="btn btn-danger " (click)="signUp()">Sign
+                            Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-group">
+            <small>Already have an RF-Account ID?<a href="#"><span class="text-danger"> Sign In</span></a></small>
+        </div>
+
+    </div>
+    <div class="col-3"></div>
+</div>
+
+<!-- <div>
+    <p *ngFor="let td of todo.rform"> FirstName : {{td.firstName}} Email : {{td.email}}</p>
+</div> -->
+<!-- <router-outlet>
+
+</router-outlet> -->

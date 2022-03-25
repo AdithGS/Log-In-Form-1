@@ -1,0 +1,98 @@
+body{
+    background-color: #003462;
+}
+
+
+.login_header{
+  
+    text-align: center;
+    background-color: #0192d0;
+    width: 100%;
+  
+    /* border-style: dotted; */
+}
+.header_text{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+   font-weight: bold;
+    text-transform: uppercase;
+    color: #f1f8e9;
+   
+    padding: 10px;
+
+}
+.user_icon{
+color: #9e9e9e;
+font-size: 40px;
+border-radius: 80px;
+/* width: auto; */
+padding-top: 35px;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center
+
+}
+.frmPos{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 15px;
+
+  
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+
+
+  .btn-style{
+      width: 100%;
+      background-color: #003462;
+      color: white;
+      text-transform: uppercase;
+  }
+/******/
+.sm-text{
+    color:#616161;
+    font-size: 14px;
+}
+a{
+    text-decoration: none !important;
+}
+
+
+.input-icon{
+    position: absolute;
+    padding-right: 8px;
+    right: 3px;
+    top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+  }
+  input{
+    padding-left: 17px;
+    padding-right: 18px;
+  }
+  .input-wrapper{
+    position: relative;
+  }
+
+
+input{
+    width: 100%;
+    border-radius: 4px;
+}
+
+.disp{
+    display: inline;
+}

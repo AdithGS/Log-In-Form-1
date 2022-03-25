@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+
+        <div class="card centered pl0">
+            <h4 class="card-header login_header header_text"> User Login</h4>
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrapper">
+                        <i class="fa-solid fa-user user_icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="logInForm">
+                    <div class="form-group input-wrapper">
+                        <input type="text" formControlName="userName" class="form-control" placeholder="Username">
+                        <i class="fa-solid fa-user input-icon " style="color:#757575"></i>
+                        <div *ngIf="(f.userName.invalid && f.userName.touched) || f.userName.dirty">
+                            <small class="text-danger" *ngIf="f.userName.errors?.required">Email required</small>
+                            <small class="text-danger" *ngIf="f.userName.errors?.minlength">Minimum 4 characters
+                                required</small>
+                        </div>
+                    </div>
+                    <div class="form-group input-wrapper">
+                        <input type="password" formControlName="password" class="form-control" placeholder="Password"
+                            maxlength=15 minlength=5>
+                        <i class="fa-solid fa-unlock-keyhole input-icon " style="color:#757575"></i>
+                        <div *ngIf="(f.password.invalid && f.password.touched) || f.password.dirty">
+                            <small class="text-danger" *ngIf="f.password.errors?.required">Password required</small>
+                            <!-- <small class="text-danger" *ngIf="f.password.errors?.minlength">Minimum 8 characters
+                                required</small> -->
+                            <small class="text-danger" *ngIf="f.password.errors?.pattern"> Minimum one letter and one
+                                number required</small>
+                        </div>
+                    </div>
+                    <div class="form-group" style="float:left;">
+                        <!-- <input type="checkbox" [formControl]="rememberLoginControl"> -->
+                        <span class="sm-text"><small>Remember me.</small></span>
+                    </div>
+                    <div class="form-group" style="float: right;">
+                        <a href=""><span class="sm-text"><small>Forgot Password?</small></span></a>
+                    </div>
+
+
+                    <!-- Selection box-->
+
+                    <!-- <div class="form-group">
+                        <select formControlName="state">
+                            <option *ngFor="let state of states" [ngValue]="state">
+                                {{ state.abbrev }}
+                            </option>
+                        </select>
+                    </div> -->
+
+                    <div class="form-group">
+                        <button class="btn btn-style" type="button" (click)="onSubmit()">
+                            <span *ngIf="logInForm.valid" class="spinner-grow spinner-grow-sm mr-auto"
+                                role="status"></span>
+                            Log In
+                        </button>
+
+                    </div>
+                </form>
+                <!-- <div class="form-group">
+                    <small></small>
+                    <span></span>
+                    Log In
+
+
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>

@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12  head-bg">
+    <p class="head-pos head-text">ToDo-App</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <div class="todo-head">
+      <form [formGroup]="search" ngModel="data">
+        <div class="inputs-wrapper">
+          <input type="text" class="form-control inputs" formControlName="search" placeholder="Search task">
+          <i class="fa-solid fa-search inputs-icon " style="color:#757575"></i>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-3"></div>
+</div>
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Firstname</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of  rform | filter:data">
+      <td>{{item.firstName}}</td>
+      <td>{{item.lastname}}</td>
+      <td>{{item.email}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+

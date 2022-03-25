@@ -1,0 +1,31 @@
+<div class="container">
+
+<div class="form-group col-md-4">
+    <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
+  </div>
+
+<table class="table table-striped border mt-1">
+    <thead>
+        <tr>
+        <th [appSort]="dataList" data-order="desc" data-name="employeeId" scope="col">Employee Id</th>
+        <th [appSort]="dataList" data-order="desc" data-name="employeeName" scope="col">Employee Name</th>
+        <th [appSort]="dataList" data-order="desc" data-name="employeeAge" scope="col">Employee Age</th>
+        <th [appSort]="dataList" data-order="desc" data-name="employeeDOB" scope="col">Employee Date Of Birth</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataList | filter:searchedKeyword | paginate: { itemsPerPage: count, currentPage: p }">
+           <td>{{data.employeeId}}</td> 
+           <td>{{data.employeeName}}</td>
+           <td>{{data.employeeAge}}</td>
+           <td>{{data.employeeDob}}</td>
+        </tr>
+    </tbody>
+   
+
+</table>
+<div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+</div>
